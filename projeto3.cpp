@@ -93,13 +93,20 @@ int main () {
 
 
 	// lista de contatos ordenados
+	Ticks[0] = clock(); // medindo o tempo de ordenacao
+
 	contato *contatos_ordenados;
+	contatos_ordenados = insertion_sort(contatos);
+	indexar_lista(contatos_ordenados, 100);
+
+	Ticks[1] = clock(); // finalizando o calculo de ordenacao e indexacao
+
+	double temp_ordena = (Ticks[1] - Ticks[0]) * 1000 / CLOCKS_PER_SEC; //tempo para realizar a ordenacao e indexacao
+	printf ("Tempo de ordenacao %lf\n", temp_ordena);
 	
 	for(int j=1; j<=3; j++){
 
 		Ticks[0] = clock();
-		contatos_ordenados = insertion_sort(contatos);
-		indexar_lista(contatos_ordenados, 100);
 
 		for(int i=0; i<pow(10, j); i++){
 			auto busca_in = busca_index(nomes[i]);
@@ -107,7 +114,7 @@ int main () {
 		}
 
 		Ticks[1] = clock();
-		tempo = (Ticks[1] - Ticks[0]) * 1000 / CLOCKS_PER_SEC;
+		tempo = ((Ticks[1] - Ticks[0]) * 1000 / CLOCKS_PER_SEC) + temp_ordena; // tempo de busca + ordenacao
 		cout << "Busca indexada, " << pow(10, j) << " valores: " << tempo << " ms." << endl;
 
 
@@ -124,11 +131,9 @@ int main () {
 
 	}	
 
-	for(int j=2; j<=15; j++){
+	for(int j=2; j<=40; j++){
 
 		Ticks[0] = clock();
-		contatos_ordenados = insertion_sort(contatos);
-		indexar_lista(contatos_ordenados, 100);
 
 		for(int i=0; i<1000*j; i++){
 			auto busca_in = busca_index(nomes[i]);
@@ -136,7 +141,7 @@ int main () {
 		}
 
 		Ticks[1] = clock();
-		tempo = (Ticks[1] - Ticks[0]) * 1000 / CLOCKS_PER_SEC;
+		tempo = (Ticks[1] - Ticks[0]) * 1000 / CLOCKS_PER_SEC+ temp_ordena;
 		cout << "Busca indexada, " << 1000*j << " valores: " << tempo << " ms." << endl;
 
 
@@ -153,127 +158,126 @@ int main () {
 
 	}
 
-	return 0;
+	// char busca[101];
+	// string nome_busca;
 
-
-	char busca[101];
-	string nome_busca;
-
-	char *ponto;
-	printf("********** Seja bem-vindo a sua lista de contatos **********\n\n");
+	// char *ponto;
+	// printf("********** Seja bem-vindo a sua lista de contatos **********\n\n");
 	
-	int opcao;
-	do{
-		printf("1. Inserir novo contato\n");
-		printf("2. Remover contatos\n");
-		printf("3. Realizar busca de usuários\n");
-		printf("4. Visualizar todos os contatos\n");
-		printf("5. Fechar a lista de contatos\n");
-		printf("Indique o número de uma das opções acima: ");
-		scanf ("%d", &opcao);
+	// int opcao;
+	// do{
+	// 	printf("1. Inserir novo contato\n");
+	// 	printf("2. Remover contatos\n");
+	// 	printf("3. Realizar busca de usuários\n");
+	// 	printf("4. Visualizar todos os contatos\n");
+	// 	printf("5. Fechar a lista de contatos\n");
+	// 	printf("Indique o número de uma das opções acima: ");
+	// 	scanf ("%d", &opcao);
 
-		switch (opcao){
-			case 1:
-				novo = lista_contatos_vazia();
+	// 	switch (opcao){
+	// 		case 1:
+	// 			novo = lista_contatos_vazia();
 
-				novo = (contato *) malloc(sizeof(contato));
-				if (novo == NULL)
-					exit (1);
+	// 			novo = (contato *) malloc(sizeof(contato));
+	// 			if (novo == NULL)
+	// 				exit (1);
 
-				printf("Insira o nome do contato: ");
-				scanf(" %[^\n]", novo->nome);
+	// 			printf("Insira o nome do contato: ");
+	// 			scanf(" %[^\n]", novo->nome);
 
-				//verificador do telefone
-				while (1){
-					char t[11];
-					printf("Insira o Telefone: ");
-					scanf(" %[^\n]", t);
-					ponto = t;
+	// 			//verificador do telefone
+	// 			while (1){
+	// 				char t[11];
+	// 				printf("Insira o Telefone: ");
+	// 				scanf(" %[^\n]", t);
+	// 				ponto = t;
 
-					int certo = verificador_telefone(novo, ponto);
+	// 				int certo = verificador_telefone(novo, ponto);
 
-					if(certo)
-						break;
+	// 				if(certo)
+	// 					break;
 
-					printf("\n*** Telefone inválido, utilize o formato xxxxx-xxxx ***\n\n");
+	// 				printf("\n*** Telefone inválido, utilize o formato xxxxx-xxxx ***\n\n");
 
-				}
+	// 			}
 
-				printf("Insira o endereço: ");
-				scanf(" %[^\n]", novo->endereco);
+	// 			printf("Insira o endereço: ");
+	// 			scanf(" %[^\n]", novo->endereco);
 
 
-				//verificador do CEP
-				while (1){
- 					printf("Insira o CEP (padrão EUA): ");
-					scanf(" %u", &novo->cep);
+	// 			//verificador do CEP
+	// 			while (1){
+ 	// 				printf("Insira o CEP (padrão EUA): ");
+	// 				scanf(" %u", &novo->cep);
 					
-					if(novo->cep > 9999 && novo->cep < 100000000)
-						break;
+	// 				if(novo->cep > 9999 && novo->cep < 100000000)
+	// 					break;
 
-					printf("\n*** CEP invalido, utilize o formato xxxxx ***\n\n");
-				}
+	// 				printf("\n*** CEP invalido, utilize o formato xxxxx ***\n\n");
+	// 			}
 
 
-				//verificador data de nascimento
-				while (1){
-					char t[11];
+	// 			//verificador data de nascimento
+	// 			while (1){
+	// 				char t[11];
 
-					printf("Insira a data de nascimento: ");
-					scanf(" %[^\n]", t);
+	// 				printf("Insira a data de nascimento: ");
+	// 				scanf(" %[^\n]", t);
 
-					ponto = t;
+	// 				ponto = t;
 
-					int certo = verificador_nascimento(novo, ponto);
+	// 				int certo = verificador_nascimento(novo, ponto);
 
-					if(certo)
-						break;
+	// 				if(certo)
+	// 					break;
 
-					printf("\n*** Data inválida, utilize o formato dd/mm/aaaa ***\n\n");
-				}
+	// 				printf("\n*** Data inválida, utilize o formato dd/mm/aaaa ***\n\n");
+	// 			}
 
-				// printf("Nome: %s\n", novo->nome);
-				// printf("Telefone: %s\n", novo->telefone);
-				// printf("Endereço: %s\n", novo->endereco);
-				// printf("CEP: %u\n", novo->cep);
-				// printf("Data de Nascimento: %s\n", novo->nascimento);
+	// 			// printf("Nome: %s\n", novo->nome);
+	// 			// printf("Telefone: %s\n", novo->telefone);
+	// 			// printf("Endereço: %s\n", novo->endereco);
+	// 			// printf("CEP: %u\n", novo->cep);
+	// 			// printf("Data de Nascimento: %s\n", novo->nascimento);
 
-				contatos = novo_contato(contatos, novo);
+	// 			contatos = novo_contato(contatos, novo);
 
-				printf("\n\n");
-				// free (novo);
-			break;
-			case 2:
-				printf("Insira o nome do cotato(s) que você deseja remover: ");
-				scanf(" %[^\n]", busca);
+	// 			printf("\n\n");
+	// 			// free (novo);
+	// 		break;
+	// 		case 2:
+	// 			printf("Insira o nome do cotato(s) que você deseja remover: ");
+	// 			scanf(" %[^\n]", busca);
 
-				ponto = busca;
+	// 			ponto = busca;
 
-				remove_contato(contatos, busca);
-			break;
-			case 3:
-				printf("Insira o nome do cotato(s) que você deseja buscar: ");
-				scanf(" %[^\n]", busca);
+	// 			remove_contato(contatos, busca);
+	// 		break;
+	// 		case 3:
+	// 			printf("Insira o nome do cotato(s) que você deseja buscar: ");
+	// 			scanf(" %[^\n]", busca);
 
-				ponto = busca;
+	// 			ponto = busca;
 
-				busca_contato(contatos, busca);
-			break;
-			case 4:
-				printf("\nLista dos contatos inseridos\n");
-				contatos = insertion_sort(contatos);
-				imprimi_contatos(contatos);
+	// 			busca_contato(contatos, busca);
+	// 		break;
+	// 		case 4:
+	// 			printf("\nLista dos contatos inseridos\n");
+	// 			contatos = insertion_sort(contatos);
+	// 			imprimi_contatos(contatos);
 
-			break;
-			case 5:
-				printf("\nFinalizando a aplicacao\n");
-			break;
-		}
+	// 		break;
+	// 		case 5:
+	// 			printf("\nFinalizando a aplicacao\n");
+	// 		break;
+	// 	}
 
-	} while (opcao != 5);
+	// } while (opcao != 5);
 	// contatos = insertion_sort(contatos);
-	salvar_arquivo(contatos);
-	libera_contatos(contatos);
+	// salvar_arquivo(contatos);
+
+	// libera_contatos(contatos);
+	// libera_contatos(contatos_ordenados);
 
 	return 0;
 }
@@ -394,23 +398,28 @@ contato * leitura_inicial(){
 
 		switch(i){
 			case 0:
+				printf ("");
 				strcpy(novo->nome,linha);
 				nomes.push_back(novo->nome);
 			break;
 
 			case 1:
+				printf ("");
 				strcpy(novo->telefone,linha);
 			break;
 
 			case 2:
+				printf ("");
 				strcpy(novo->endereco,linha);
 			break;
 
 			case 3:
+				printf ("");
 				sscanf(linha, "%u", &novo->cep);
 			break;
 
 			case 4:
+				printf ("");
 				strcpy(novo->nascimento,linha);
 			break;
 		}
