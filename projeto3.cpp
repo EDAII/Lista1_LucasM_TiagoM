@@ -17,6 +17,7 @@ struct Pessoa {
 
 typedef struct Pessoa contato;
 vector<string> nomes;
+vector<pair<string, contato *>> indice;
 
 contato *lista_contatos_vazia();
 contato *leitura_inicial();
@@ -32,22 +33,129 @@ int verificador_nascimento(contato *novo, char *t);
 contato * busca_sequencial(contato *contatos, string chave);
 vector<string> recorte(int elementos);
 
+void indexar_lista(contato *contatos_ordenados, int n){
+
+	contato *atual;
+	int intervalo = nomes.size() / n;
+	pair<string,contato *> aux;
+
+	aux.first = *contatos_ordenados->nome;
+	aux.second = contatos_ordenados;
+
+	indice.push_back(aux);
+
+	atual = contatos_ordenados->proximo;
+
+	for(int k=1; k<nomes.size(); k ++, atual = atual->proximo){
+		
+		//cout << k << endl;
+		
+		if(k%intervalo == 0){
+			aux.first = atual->nome;
+			aux.second = atual;
+			indice.push_back(aux);
+		}
+
+		if(atual->proximo == NULL){
+			return;
+		} 
+	}
+}
+
+contato * busca_index(string chave){
+
+	contato *aux;
+
+	for(int j=1; j<indice.size(); j++){
+		if(chave < indice[j].first){
+			aux = busca_sequencial(indice[j-1].second, chave);
+			return aux;
+		}
+	}
+
+	return NULL;
+
+}
+
 int main () {
 
 	contato *contatos;
 	contato *novo;
+	clock_t Ticks[2];
+	double tempo;
+
+	//cout << "Teste" << endl;
+
 
 	contatos = leitura_inicial(); //realizando a leitura do banco de dados
 
+	cout << "" << endl;
+
+
 	// lista de contatos ordenados
 	contato *contatos_ordenados;
-
-	contatos_ordenados = (contato *) malloc(sizeof(contato));
-	if (contatos_ordenados == NULL)
-		exit (1);
-
-	contatos_ordenados = insertion_sort(contatos); 
 	
+	for(int j=1; j<=3; j++){
+
+		Ticks[0] = clock();
+		contatos_ordenados = insertion_sort(contatos);
+		indexar_lista(contatos_ordenados, 100);
+
+		for(int i=0; i<pow(10, j); i++){
+			auto busca_in = busca_index(nomes[i]);
+
+		}
+
+		Ticks[1] = clock();
+		tempo = (Ticks[1] - Ticks[0]) * 1000 / CLOCKS_PER_SEC;
+		cout << "Busca indexada, " << pow(10, j) << " valores: " << tempo << " ms." << endl;
+
+
+		Ticks[0] = clock();
+		for(int i=0; i<pow(10, j); i++){
+			auto busca_seq = busca_sequencial(contatos, nomes[i]);		
+		}
+
+			Ticks[1] = clock();
+		tempo = (Ticks[1] - Ticks[0]) * 1000 / CLOCKS_PER_SEC;
+		cout << "Busca sequencial, " << pow(10, j) << " valores: " << tempo << " ms." << endl;
+
+		cout << endl;
+
+	}	
+
+	for(int j=2; j<=15; j++){
+
+		Ticks[0] = clock();
+		contatos_ordenados = insertion_sort(contatos);
+		indexar_lista(contatos_ordenados, 100);
+
+		for(int i=0; i<1000*j; i++){
+			auto busca_in = busca_index(nomes[i]);
+
+		}
+
+		Ticks[1] = clock();
+		tempo = (Ticks[1] - Ticks[0]) * 1000 / CLOCKS_PER_SEC;
+		cout << "Busca indexada, " << 1000*j << " valores: " << tempo << " ms." << endl;
+
+
+		Ticks[0] = clock();
+		for(int i=0; i<1000*j; i++){
+			auto busca_seq = busca_sequencial(contatos, nomes[i]);		
+		}
+
+			Ticks[1] = clock();
+		tempo = (Ticks[1] - Ticks[0]) * 1000 / CLOCKS_PER_SEC;
+		cout << "Busca sequencial, " << 1000*j << " valores: " << tempo << " ms." << endl;
+
+		cout << endl;
+
+	}
+
+	return 0;
+
+
 	char busca[101];
 	string nome_busca;
 
@@ -287,6 +395,7 @@ contato * leitura_inicial(){
 		switch(i){
 			case 0:
 				strcpy(novo->nome,linha);
+				nomes.push_back(novo->nome);
 			break;
 
 			case 1:
