@@ -40,7 +40,6 @@ contato * busca_sequencial(contato *contatos, string chave){
 }
 
 vector<string> recorte(int elementos){
-
     vector<string> aux;
     int a=0;
     string aux2;
@@ -54,9 +53,7 @@ vector<string> recorte(int elementos){
         aux.push_back(nomes[a]);
 
     }
-
     return aux;
-
 }
 
 
