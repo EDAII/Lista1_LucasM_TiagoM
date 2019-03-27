@@ -81,7 +81,7 @@ int main () {
  					printf("Insira o CEP (padrão EUA): ");
 					scanf(" %u", &novo->cep);
 					
-					if(novo->cep > 9999 && novo->cep < 100000)
+					if(novo->cep > 9999 && novo->cep < 100000000)
 						break;
 
 					printf("\n*** CEP invalido, utilize o formato xxxxx ***\n\n");
