@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include<bits/stdc++.h>
+
+using namespace std;
 
 struct Pessoa {
 	char nome[101];
@@ -13,6 +13,7 @@ struct Pessoa {
 };	
 
 typedef struct Pessoa contato;
+vector<string> nomes;
 
 contato *lista_contatos_vazia();
 contato *leitura_inicial();
@@ -26,12 +27,55 @@ void remove_contato(contato *contatos, char *busca);
 int verificador_telefone(contato *novo, char *t);
 int verificador_nascimento(contato *novo, char *t);
 
+contato * busca_sequencial(contato *contatos, string chave){
+
+    contato *atual;
+
+    for(atual = contatos; atual->proximo != NULL; atual=atual->proximo){
+        if(chave == atual->nome){
+            return atual;
+        }
+    }
+
+    return NULL;
+
+}
+
+vector<string> recorte(int elementos){
+
+    vector<string> aux;
+    int a=0;
+    string aux2;
+
+    srand(clock());
+
+    for(int i=0; i<elementos; i++){
+        
+        a = rand()%nomes.size();
+
+        aux.push_back(nomes[a]);
+
+    }
+
+    return aux;
+
+}
+
+
 int main () {
 
 	contato *contatos;
 	contato *novo;
 	contatos = leitura_inicial();
-	char busca[101];
+
+    auto recor = recorte(5000);
+    auto teste = busca_sequencial(contatos, recor[0]);
+
+    cout << recor[0] << endl << teste << endl;
+
+    printf("%s\n", busca_sequencial(contatos, recor[0])->nome);
+
+    char busca[101];
 	char *ponto;
 	printf("********** Seja bem-vindo a sua lista de contatos **********\n\n");
 	
@@ -266,6 +310,7 @@ contato * leitura_inicial(){
 		switch(i){
 			case 0:
 				strcpy(novo->nome,linha);
+                nomes.push_back(novo->nome);
 			break;
 
 			case 1:
