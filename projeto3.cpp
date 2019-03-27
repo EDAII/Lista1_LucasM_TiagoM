@@ -5,7 +5,7 @@
 struct Pessoa {
 	char nome[101];
 	char telefone[11];
-	char endereco[101];
+	char endereco[300];
 	unsigned int cep;
 	char nascimento[11];
 	struct Pessoa *proximo;
