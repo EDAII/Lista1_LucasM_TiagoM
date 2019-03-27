@@ -28,7 +28,6 @@ int verificador_telefone(contato *novo, char *t);
 int verificador_nascimento(contato *novo, char *t);
 
 contato * busca_sequencial(contato *contatos, string chave){
-
     contato *atual;
 
     for(atual = contatos; atual->proximo != NULL; atual=atual->proximo){
@@ -38,7 +37,6 @@ contato * busca_sequencial(contato *contatos, string chave){
     }
 
     return NULL;
-
 }
 
 vector<string> recorte(int elementos){

@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <bits/stdc++.h>
+
+using namespace std;
 
 struct Pessoa {
 	char nome[101];
@@ -13,6 +16,7 @@ struct Pessoa {
 };	
 
 typedef struct Pessoa contato;
+vector<string> nomes;
 
 contato *lista_contatos_vazia();
 contato *leitura_inicial();
@@ -25,13 +29,28 @@ void busca_contato(contato *contatos, char *busca);
 void remove_contato(contato *contatos, char *busca);
 int verificador_telefone(contato *novo, char *t);
 int verificador_nascimento(contato *novo, char *t);
+contato * busca_sequencial(contato *contatos, string chave);
+vector<string> recorte(int elementos);
 
 int main () {
 
 	contato *contatos;
 	contato *novo;
-	contatos = leitura_inicial();
+
+	contatos = leitura_inicial(); //realizando a leitura do banco de dados
+
+	// lista de contatos ordenados
+	contato *contatos_ordenados;
+
+	contatos_ordenados = (contato *) malloc(sizeof(contato));
+	if (contatos_ordenados == NULL)
+		exit (1);
+
+	contatos_ordenados = insertion_sort(contatos); 
+	
 	char busca[101];
+	string nome_busca;
+
 	char *ponto;
 	printf("********** Seja bem-vindo a sua lista de contatos **********\n\n");
 	
@@ -133,16 +152,18 @@ int main () {
 				busca_contato(contatos, busca);
 			break;
 			case 4:
+				printf("\nLista dos contatos inseridos\n");
 				contatos = insertion_sort(contatos);
 				imprimi_contatos(contatos);
 
 			break;
 			case 5:
+				printf("\nFinalizando a aplicacao\n");
 			break;
 		}
 
 	} while (opcao != 5);
-	contatos = insertion_sort(contatos);
+	// contatos = insertion_sort(contatos);
 	salvar_arquivo(contatos);
 	libera_contatos(contatos);
 
@@ -510,4 +531,35 @@ int verificador_nascimento(contato *novo, char *t) {
 		novo->nascimento[i] = *(t+j);
 	}
 	return 1;
+}
+
+
+contato * busca_sequencial(contato *contatos, string chave){
+    contato *atual;
+
+    for(atual = contatos; atual->proximo != NULL; atual=atual->proximo){
+        if(chave == atual->nome){
+            return atual;
+        }
+    }
+
+    return NULL;
+}
+
+
+vector<string> recorte(int elementos){
+    vector<string> aux;
+    int a=0;
+    string aux2;
+
+    srand(clock());
+
+    for(int i=0; i<elementos; i++){
+        
+        a = rand()%nomes.size();
+
+        aux.push_back(nomes[a]);
+
+    }
+    return aux;
 }
