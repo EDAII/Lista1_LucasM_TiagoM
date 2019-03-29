@@ -67,7 +67,7 @@ int main(){
     arquivo2.close();
     arquivo_num.close();
 
-    for(int k=0; k < 50000; k++){
+    for(int k=0; k < 100000; k++){
 
         srand(clock());
 

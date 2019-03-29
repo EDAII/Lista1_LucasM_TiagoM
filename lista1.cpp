@@ -131,7 +131,7 @@ int main () {
 
 	}	
 
-	for(int j=2; j<=40; j++){
+	for(int j=2; j<=90; j++){
 
 		Ticks[0] = clock();
 

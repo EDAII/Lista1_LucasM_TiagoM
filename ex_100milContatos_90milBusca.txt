@@ -1,0 +1,278 @@
+
+Tempo de ordenacao 456923.000000
+Busca indexada, 10 valores: 456923 ms.
+Busca sequencial, 10 valores: 19 ms.
+
+Busca indexada, 100 valores: 456926 ms.
+Busca sequencial, 100 valores: 208 ms.
+
+Busca indexada, 1000 valores: 456955 ms.
+Busca sequencial, 1000 valores: 2052 ms.
+
+Busca indexada, 2000 valores: 456985 ms.
+Busca sequencial, 2000 valores: 4083 ms.
+
+Busca indexada, 3000 valores: 457019 ms.
+Busca sequencial, 3000 valores: 5725 ms.
+
+Busca indexada, 4000 valores: 457050 ms.
+Busca sequencial, 4000 valores: 8059 ms.
+
+Busca indexada, 5000 valores: 457082 ms.
+Busca sequencial, 5000 valores: 10982 ms.
+
+Busca indexada, 6000 valores: 457137 ms.
+Busca sequencial, 6000 valores: 14190 ms.
+
+Busca indexada, 7000 valores: 457172 ms.
+Busca sequencial, 7000 valores: 16020 ms.
+
+Busca indexada, 8000 valores: 457214 ms.
+Busca sequencial, 8000 valores: 19704 ms.
+
+Busca indexada, 9000 valores: 457238 ms.
+Busca sequencial, 9000 valores: 21649 ms.
+
+Busca indexada, 10000 valores: 457281 ms.
+Busca sequencial, 10000 valores: 23747 ms.
+
+Busca indexada, 11000 valores: 457334 ms.
+Busca sequencial, 11000 valores: 24459 ms.
+
+Busca indexada, 12000 valores: 457325 ms.
+Busca sequencial, 12000 valores: 26094 ms.
+
+Busca indexada, 13000 valores: 457363 ms.
+Busca sequencial, 13000 valores: 23376 ms.
+
+Busca indexada, 14000 valores: 457387 ms.
+Busca sequencial, 14000 valores: 23508 ms.
+
+Busca indexada, 15000 valores: 457392 ms.
+Busca sequencial, 15000 valores: 25059 ms.
+
+Busca indexada, 16000 valores: 457436 ms.
+Busca sequencial, 16000 valores: 26302 ms.
+
+Busca indexada, 17000 valores: 457484 ms.
+Busca sequencial, 17000 valores: 28389 ms.
+
+Busca indexada, 18000 valores: 457515 ms.
+Busca sequencial, 18000 valores: 30456 ms.
+
+Busca indexada, 19000 valores: 457563 ms.
+Busca sequencial, 19000 valores: 35489 ms.
+
+Busca indexada, 20000 valores: 457599 ms.
+Busca sequencial, 20000 valores: 40866 ms.
+
+Busca indexada, 21000 valores: 457637 ms.
+Busca sequencial, 21000 valores: 42011 ms.
+
+Busca indexada, 22000 valores: 457677 ms.
+Busca sequencial, 22000 valores: 44564 ms.
+
+Busca indexada, 23000 valores: 457707 ms.
+Busca sequencial, 23000 valores: 44560 ms.
+
+Busca indexada, 24000 valores: 457743 ms.
+Busca sequencial, 24000 valores: 45483 ms.
+
+Busca indexada, 25000 valores: 457773 ms.
+Busca sequencial, 25000 valores: 47657 ms.
+
+Busca indexada, 26000 valores: 457804 ms.
+Busca sequencial, 26000 valores: 49468 ms.
+
+Busca indexada, 27000 valores: 457840 ms.
+Busca sequencial, 27000 valores: 53022 ms.
+
+Busca indexada, 28000 valores: 457880 ms.
+Busca sequencial, 28000 valores: 55089 ms.
+
+Busca indexada, 29000 valores: 457960 ms.
+Busca sequencial, 29000 valores: 62672 ms.
+
+Busca indexada, 30000 valores: 457987 ms.
+Busca sequencial, 30000 valores: 59530 ms.
+
+Busca indexada, 31000 valores: 457964 ms.
+Busca sequencial, 31000 valores: 63741 ms.
+
+Busca indexada, 32000 valores: 458074 ms.
+Busca sequencial, 32000 valores: 65318 ms.
+
+Busca indexada, 33000 valores: 458052 ms.
+Busca sequencial, 33000 valores: 66415 ms.
+
+Busca indexada, 34000 valores: 458097 ms.
+Busca sequencial, 34000 valores: 70772 ms.
+
+Busca indexada, 35000 valores: 458175 ms.
+Busca sequencial, 35000 valores: 75116 ms.
+
+Busca indexada, 36000 valores: 458272 ms.
+Busca sequencial, 36000 valores: 71687 ms.
+
+Busca indexada, 37000 valores: 458182 ms.
+Busca sequencial, 37000 valores: 76495 ms.
+
+Busca indexada, 38000 valores: 458275 ms.
+Busca sequencial, 38000 valores: 70224 ms.
+
+Busca indexada, 39000 valores: 458252 ms.
+Busca sequencial, 39000 valores: 78960 ms.
+
+Busca indexada, 40000 valores: 458428 ms.
+Busca sequencial, 40000 valores: 78050 ms.
+
+Busca indexada, 41000 valores: 458273 ms.
+Busca sequencial, 41000 valores: 72816 ms.
+
+Busca indexada, 42000 valores: 458365 ms.
+Busca sequencial, 42000 valores: 90917 ms.
+
+Busca indexada, 43000 valores: 458482 ms.
+Busca sequencial, 43000 valores: 86956 ms.
+
+Busca indexada, 44000 valores: 458442 ms.
+Busca sequencial, 44000 valores: 87405 ms.
+
+Busca indexada, 45000 valores: 458562 ms.
+Busca sequencial, 45000 valores: 93540 ms.
+
+Busca indexada, 46000 valores: 458560 ms.
+Busca sequencial, 46000 valores: 90054 ms.
+
+Busca indexada, 47000 valores: 458510 ms.
+Busca sequencial, 47000 valores: 86623 ms.
+
+Busca indexada, 48000 valores: 458805 ms.
+Busca sequencial, 48000 valores: 101604 ms.
+
+Busca indexada, 49000 valores: 458700 ms.
+Busca sequencial, 49000 valores: 100254 ms.
+
+Busca indexada, 50000 valores: 458898 ms.
+Busca sequencial, 50000 valores: 99179 ms.
+
+Busca indexada, 51000 valores: 458799 ms.
+Busca sequencial, 51000 valores: 92418 ms.
+
+Busca indexada, 52000 valores: 458728 ms.
+Busca sequencial, 52000 valores: 100409 ms.
+
+Busca indexada, 53000 valores: 458778 ms.
+Busca sequencial, 53000 valores: 96363 ms.
+
+Busca indexada, 54000 valores: 458801 ms.
+Busca sequencial, 54000 valores: 106776 ms.
+
+Busca indexada, 55000 valores: 458779 ms.
+Busca sequencial, 55000 valores: 102333 ms.
+
+Busca indexada, 56000 valores: 458961 ms.
+Busca sequencial, 56000 valores: 100659 ms.
+
+Busca indexada, 57000 valores: 458903 ms.
+Busca sequencial, 57000 valores: 112144 ms.
+
+Busca indexada, 58000 valores: 458932 ms.
+Busca sequencial, 58000 valores: 107631 ms.
+
+Busca indexada, 59000 valores: 459082 ms.
+Busca sequencial, 59000 valores: 115684 ms.
+
+Busca indexada, 60000 valores: 459009 ms.
+Busca sequencial, 60000 valores: 107115 ms.
+
+Busca indexada, 61000 valores: 459246 ms.
+Busca sequencial, 61000 valores: 113520 ms.
+
+Busca indexada, 62000 valores: 459126 ms.
+Busca sequencial, 62000 valores: 125346 ms.
+
+Busca indexada, 63000 valores: 459141 ms.
+Busca sequencial, 63000 valores: 111698 ms.
+
+Busca indexada, 64000 valores: 459133 ms.
+Busca sequencial, 64000 valores: 130784 ms.
+
+Busca indexada, 65000 valores: 459117 ms.
+Busca sequencial, 65000 valores: 115958 ms.
+
+Busca indexada, 66000 valores: 459159 ms.
+Busca sequencial, 66000 valores: 110197 ms.
+
+Busca indexada, 67000 valores: 459215 ms.
+Busca sequencial, 67000 valores: 121921 ms.
+
+Busca indexada, 68000 valores: 459385 ms.
+Busca sequencial, 68000 valores: 131133 ms.
+
+Busca indexada, 69000 valores: 459476 ms.
+Busca sequencial, 69000 valores: 120605 ms.
+
+Busca indexada, 70000 valores: 459475 ms.
+Busca sequencial, 70000 valores: 135336 ms.
+
+Busca indexada, 71000 valores: 459652 ms.
+Busca sequencial, 71000 valores: 155165 ms.
+
+Busca indexada, 72000 valores: 459754 ms.
+Busca sequencial, 72000 valores: 126730 ms.
+
+Busca indexada, 73000 valores: 459439 ms.
+Busca sequencial, 73000 valores: 132279 ms.
+
+Busca indexada, 74000 valores: 459414 ms.
+Busca sequencial, 74000 valores: 145516 ms.
+
+Busca indexada, 75000 valores: 459515 ms.
+Busca sequencial, 75000 valores: 141617 ms.
+
+Busca indexada, 76000 valores: 459496 ms.
+Busca sequencial, 76000 valores: 129795 ms.
+
+Busca indexada, 77000 valores: 459591 ms.
+Busca sequencial, 77000 valores: 135697 ms.
+
+Busca indexada, 78000 valores: 459724 ms.
+Busca sequencial, 78000 valores: 154751 ms.
+
+Busca indexada, 79000 valores: 459718 ms.
+Busca sequencial, 79000 valores: 156299 ms.
+
+Busca indexada, 80000 valores: 459731 ms.
+Busca sequencial, 80000 valores: 167953 ms.
+
+Busca indexada, 81000 valores: 459771 ms.
+Busca sequencial, 81000 valores: 160526 ms.
+
+Busca indexada, 82000 valores: 459935 ms.
+Busca sequencial, 82000 valores: 166393 ms.
+
+Busca indexada, 83000 valores: 459840 ms.
+Busca sequencial, 83000 valores: 138373 ms.
+
+Busca indexada, 84000 valores: 459722 ms.
+Busca sequencial, 84000 valores: 142858 ms.
+
+Busca indexada, 85000 valores: 459867 ms.
+Busca sequencial, 85000 valores: 143358 ms.
+
+Busca indexada, 86000 valores: 459843 ms.
+Busca sequencial, 86000 valores: 144586 ms.
+
+Busca indexada, 87000 valores: 459706 ms.
+Busca sequencial, 87000 valores: 158846 ms.
+
+Busca indexada, 88000 valores: 460444 ms.
+Busca sequencial, 88000 valores: 165424 ms.
+
+Busca indexada, 89000 valores: 460143 ms.
+Busca sequencial, 89000 valores: 176576 ms.
+
+Busca indexada, 90000 valores: 460042 ms.
+Busca sequencial, 90000 valores: 180372 ms.
+
